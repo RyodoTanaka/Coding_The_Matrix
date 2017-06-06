@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{jsarticle}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{ascmac}
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{39\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.5in}
+\setlength{\headsep}{0.3in}
+%
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+%
+
+\title{\bf 「行列プログラマー」p.10 \\ 0.3.21解答}
+\author{RyodoTanaka}
+\date{}
+\begin{document}
+%
+%
+\maketitle
+
+\section*{問題}
+補題0.3.21を証明せよ．
+
+\section*{解答}
+
+\begin{eqnarray}
+g:U→V，f:V→W 
+\end{eqnarray}
+
+とする．\\
+このとき，命題0.3.12より
+
+\begin{eqnarray}
+ (g^{-1}\circ f^{-1})\circ (f\circ g)&=&g^{-1}\circ (f^{-1}\circ (f\circ g)) \nonumber \\
+ &=g&^{-1}\circ ((f^{-1}\circ f)\circ g) \nonumber \\
+ &=&g^{-1}\circ ({\rm id}_V\circ g) \nonumber \\
+ (g^{-1}\circ f^{-1})\circ (f\circ g)&=g&^{-1}\circ g={\rm id}_U\label{032450_7Jun17} \\
+ \nonumber \\
+ (f\circ g)\circ (g^{-1}\circ f^{-1})&=&f\circ (g\circ (g^{-1}\circ f^{-1})) \nonumber\\
+ &=&f\circ ((g\circ g^{-1})\circ f^{-1}) \nonumber \\
+ &=&f\circ ({\rm id}_V\circ f^{-1}) \nonumber \\
+ (f\circ g)\circ (g^{-1}\circ f^{-1})&=&f\circ f^{-1}={\rm id}_W\label{032550_7Jun17}
+\end{eqnarray}
+
+となる．\\
+よって，(\ref{032450_7Jun17})，(\ref{032550_7Jun17})より，$g^{-1}\circ f^{-1}=(f\circ g)^{-1}$が言える.
+
+\end{document}
