@@ -12,9 +12,18 @@ def makeInverseIndex(strlist):
     return wdict
 
 def orSearch(inverseIndex, query):
-    wset=set()
+    wset=set(list())
     for word in query:
         if word in inverseIndex:
-            for a in inverseIndex[word]:
-                wset.add(a) 
+            wset = wset | set(inverseIndex[word])
+    return wset
+
+def andSearch(inverseIndex, query):
+    wset=set(list())
+    for num, word in enumerate(query):
+        if word in inverseIndex:
+            if num==0:
+                wset = wset | set(inverseIndex[word]) 
+            else:
+                wset = wset & set(inverseIndex[word]) 
     return wset
