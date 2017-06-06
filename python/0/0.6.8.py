@@ -13,4 +13,4 @@ print "==== Big Stories ===="
 f = open('stories_big.txt')
 stories = list(f)
 iindex = ii.makeInverseIndex(stories)
-print ii.andSearch(iindex, ['the', 'all', 'his'])
+print ii.andSearch(iindex, ['the', 'all', 'his', 'cup'])
