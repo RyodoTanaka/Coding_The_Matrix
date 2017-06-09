@@ -10,5 +10,5 @@ def addn(v, w):
 L=[ [2,2],[3,2],[1.75,1],[2,1],[2.25,1],[2.5,1],[2.75,1],[3,1],[3.25,1] ]
 limit=4
 
-cplt.plot(addn(L,[1,2]), limit, 1)
+cplt.plot([addn(x,[1,2]) for x in L], limit, 1)
 cplt.show()
